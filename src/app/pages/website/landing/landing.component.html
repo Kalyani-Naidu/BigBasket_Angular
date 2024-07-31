@@ -1,0 +1,57 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-info">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand text-dark">
+                <i class="fas fa-shopping-cart"></i><b> BigBasket</b>
+             </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1 text-danger" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li *ngFor="let category of categoryList">
+                            <a class="dropdown-item" (click)="navigateToProducts(category.categoryId)" routerLinkActive = "router-link-active" >{{category.categoryName}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Link 1</a>
+                        <a href="#" class="dropdown-item">Link 2</a>
+                        <a href="#" class="dropdown-item">Link 3</a>
+                        <a href="#" class="dropdown-item">Link 4</a>
+                        <a href="#" class="dropdown-item">Link 5</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0)">Contact Us</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <ul class="navbar-nav d-flex flex-row me-1">
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link text-dark" href="#"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link text-dark" (click)="navigateToCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-secondary">{{ noOfItemsInCart }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link text-dark" href="#"><i class="fa fa-fw fa-user"></i></a>
+                    </li>
+                </ul>
+            </form>
+          </div>
+        </div>
+    </nav>
+</header>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
+  

@@ -1,0 +1,16 @@
+<div class="style">
+<form action="action_page.php" method="post" >
+    <div class="imageContainer">
+       <img src="assets/login.png" alt="avatar" class="avatar">
+    </div>
+    <div class="container">
+        <label for="Username"><b>Username</b></label><br>
+        <input type="text" placeholder="Enter user name" name="username" [(ngModel)]="loginObj.username"><br>
+
+        <label for="password"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter your password" name="password" [(ngModel)]="loginObj.password"><br>
+
+        <button type="button" (click)="onLogin()">Login</button>
+    </div>    
+</form>
+</div>

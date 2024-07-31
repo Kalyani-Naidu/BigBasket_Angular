@@ -1,0 +1,35 @@
+
+<div class="container-fluid" >
+    <div class="card" >
+     <div class="card-header" *ngIf="products">
+         <h1 style="text-align: center; color: rgb(12, 184, 64);"><b>{{products[0].categoryName}}</b></h1>
+         <h3 style="text-align: center;">Here you can find our best {{products[0].categoryName}}, ordered and liked by most of the users</h3>
+     </div>
+     <div class="card-body">
+         <div class="row">
+             <div class="col-3"  *ngFor="let product of products">
+                 <div class="card">
+                     <img class="card-img-top" height="150px" [src]="product.productImageUrl" alt="Card image">
+                     
+                         <h4 class="card-title" style="text-align: center;">{{product.productName}}</h4>
+                         <p class="card-text" style="text-align: center;">{{product.productShortName}}</p>
+                         <div class="d-flex my-3 justify-content-center">
+                             <i class="fas fa-star text-primary"></i>
+                             <i class="fas fa-star text-primary"></i>
+                             <i class="fas fa-star text-primary"></i>
+                             <i class="fas fa-star text-primary"></i>
+                             <i class="fas fa-star"></i>
+                         </div>
+                         <h4 class="d-flex my-3 justify-content-center">${{product.productPrice}}</h4>
+                         <div class="d-flex my-3 justify-content-center">
+                         <a href="#" class="btn border btn-warning rounded-pill px-3 text-primary">
+                             <i class="fa fa-shopping-bag me-2 text-primary"></i>Add to cart
+                         </a>
+                     </div>
+                     </div>
+                   </div>  
+                 </div>     
+             </div>
+         </div>
+ </div>
+   

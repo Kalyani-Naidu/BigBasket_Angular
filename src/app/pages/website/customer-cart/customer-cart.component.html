@@ -1,0 +1,43 @@
+<
+<div class="container-fluid" >
+   <div class="card" >
+    <div class="card-header">
+        <h1 style="text-align: center; color: rgb(12, 184, 64);"><b>Products in your cart!</b></h1>
+        <h3 style="text-align: center;">Buy now to get exiting offers... Don't miss it</h3>
+        <h1 style="text-align: center; color: rgb(107, 9, 9);">
+            <b>Total: ${{ cartTotalAmt.toFixed(2) }}</b>
+        </h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3"  *ngFor="let product of cartList">
+                <div class="card" >
+                    <img class="card-img-top" height="150px" [src]="product.productImageUrl" alt="Card image">
+                    
+                        <h4 class="card-title" style="text-align: center;">{{product.productName}}</h4>
+                        <p class="card-text" style="text-align: center;">{{product.productShortName}}</p>
+                        <div class="d-flex my-3 justify-content-center">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="d-flex my-3 justify-content-center">${{product.productPrice}}</h4>
+                    </div>
+                  </div>  
+                </div>     
+            </div>
+
+        </div>
+        <div class="d-flex my-3 justify-content-center">
+            <h1 class="btn btn-primary border rounded-pill px-3 text-light" style="text-align: center;">
+                <b (click)="navigateToCheckOut()">Buy Now</b>
+            </h1>
+            <h1 class="btn btn-danger border rounded-pill px-3 text-light" style="text-align: center;">
+                <b (click)="clearCart()">Clear Cart</b>
+            </h1>
+        </div>
+        
+</div>
+  
